@@ -13,8 +13,3 @@
         </div>
     </div>
 </x-app-layout>
-
-
-{{-- Onna dan api methana me file ekata aluthen code line ekk add krnw --}}
-
-{{-- Onna dan api methana me file ekata aluthen code line ekk add krnw - Version 3 ekha --}}
