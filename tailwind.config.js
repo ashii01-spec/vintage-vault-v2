@@ -15,9 +15,19 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                serif: ['Georgia', 'serif'],
             },
+            colors: {
+                vintage: {
+                    50: '#fdfbf7',
+                    100: '#f7f1e3', // Creamy vintage background
+                    500: '#8c7b75', // Muted brown
+                    900: '#3e2723', // Dark wood color
+                }
+            }
         },
     },
 
     plugins: [forms, typography],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
