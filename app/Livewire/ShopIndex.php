@@ -26,8 +26,4 @@ class ShopIndex extends Component
             'categories' => $categories,
         ])->layout('layouts.frontend'); // Use our custom layout
     }
-
-    public function filterByCategory($categoryId) {
-        $this->selectedCategory = $categoryId;
-    }
 }
