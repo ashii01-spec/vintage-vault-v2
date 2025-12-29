@@ -3,9 +3,14 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Product;
+use App\Models\Category;
 
 class ShopIndex extends Component
 {
+    public $selectedCategory = null;
+    public $search = '';
+
     public function render()
     {
         // Fetch categories for the filter sidebar
@@ -25,5 +30,9 @@ class ShopIndex extends Component
             'products' => $products,
             'categories' => $categories,
         ])->layout('layouts.frontend'); // Use our custom layout
+    }
+    
+    public function filterByCategory($categoryId) {
+        $this->selectedCategory = $categoryId;
     }
 }

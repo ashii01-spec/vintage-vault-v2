@@ -16,11 +16,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Public Pages (Landing Page)
-Route::get('/', function () {
-    return view('welcome'); // We will change this to our Vintage Vault Home later
-});
-
 // Authenticated Users (Buyers, Sellers, Admin)
 Route::middleware([
     'auth:sanctum',
@@ -48,3 +43,16 @@ Route::middleware([
         })->name('seller.products');
     });
 });
+
+// ----------------------------------------- Public Routes -----------------------------------------
+
+// Landing Page ( Home Page )
+Route::get('/', function () {
+    return view('welcome'); // We will change this to our Vintage Vault Home later
+});
+
+// Shop Page
+Route::get('/shop', \App\Livewire\ShopIndex::class)->name('shop');
+
+
+
