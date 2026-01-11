@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\UserController;
 
 // ----------------------------------------- Public Routes -----------------------------------------
 
@@ -19,12 +22,18 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    // admin routes
-    Route::middleware(['role:admin'])->prefix('admin')->group(function () {
-        Route::get('/users', function () {
-            return "Welcome Admin! Manage Users here.";
-        })->name('admin.users');
-
+    // ADMIN ROUTES
+    Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+        
+        // Dashboard
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard');
+        })->name('dashboard');
+    
+        // CRUD Routes (Standard Resource Routes)
+        Route::resource('products', ProductController::class);
+        Route::resource('categories', CategoryController::class);
+        Route::resource('users', UserController::class);
     });
     
     // General Dashboard for everyone
