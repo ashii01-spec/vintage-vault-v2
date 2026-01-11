@@ -14,29 +14,23 @@ class ShopIndex extends Component
     public $selectedCategory = null;
     public $search = '';
 
-    // ADD TO CART Function
     public function addToCart($productId)
     {
-        // 1. Check if user is logged in
         if (!Auth::check()) {
             return redirect()->route('login');
         }
 
-        // 2. Find or Create the User's Cart
         $cart = Cart::firstOrCreate(
             ['user_id' => Auth::id()]
         );
 
-        // 3. Check if the item is already in the cart
         $cartItem = CartItem::where('cart_id', $cart->id)
                             ->where('product_id', $productId)
                             ->first();
 
         if ($cartItem) {
-            // Update quantity if exists
             $cartItem->increment('quantity');
         } else {
-            // Create new item if not
             CartItem::create([
                 'cart_id' => $cart->id,
                 'product_id' => $productId,
@@ -44,11 +38,9 @@ class ShopIndex extends Component
             ]);
         }
 
-        // 4. Show a success message (Toast)
         session()->flash('message', 'Item added to your collection!');
     }
 
-    // RENDER Function
     public function render()
     {
         $categories = Category::all();
