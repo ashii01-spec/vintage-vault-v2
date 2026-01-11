@@ -23,6 +23,7 @@ export default {
                     100: '#f7f1e3', // Creamy vintage background
                     500: '#8c7b75', // Muted brown
                     900: '#3e2723', // Dark wood color
+                    950: '#2D2E2E', // gray
                 }
             }
         },

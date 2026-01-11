@@ -1,7 +1,7 @@
 
 <!-- Footer -->
 
-<footer class="bg-gray-800 text-white py-8">
+<footer class="bg-vintage-950 text-white py-8">
     <div class="container mx-auto my-28 px-4 flex flex-wrap justify-between">
         <div class="w-full md:w-1/3 mb-6 md:mb-0">
             <h1 class="text-2xl font-bold mb-4">Contact Us</h1>
@@ -29,10 +29,10 @@
                 <button class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-r-md">Subscribe</button>
             </form>
             <ul class="flex space-x-4">
-                <li><a href="#" class="hover:opacity-75"><img src="/ashmi/vintage_vault/public/images/facebook.png" alt="facebook_icon" class="w-8 h-8"></a></li>
-                <li><a href="#" class="hover:opacity-75"><img src="/ashmi/vintage_vault/public/images/twitter.png" alt="twitter_icon" class="w-8 h-8"></a></li>
-                <li><a href="#" class="hover:opacity-75"><img src="/ashmi/vintage_vault/public/images/instagram.png" alt="instagram_icon" class="w-8 h-8"></a></li>
-                <li><a href="#" class="hover:opacity-75"><img src="/ashmi/vintage_vault/public/images/whatsapp.png" alt="whatsapp_icon" class="w-8 h-8"></a></li>
+                <li><a href="#" class="hover:opacity-75"><img src="./images/facebook.png" alt="facebook_icon" class="w-8 h-8"></a></li>
+                <li><a href="#" class="hover:opacity-75"><img src="./images/twitter.png" alt="twitter_icon" class="w-8 h-8"></a></li>
+                <li><a href="#" class="hover:opacity-75"><img src="./images/instagram.png" alt="instagram_icon" class="w-8 h-8"></a></li>
+                <li><a href="#" class="hover:opacity-75"><img src="./images/whatsapp.png" alt="whatsapp_icon" class="w-8 h-8"></a></li>
             </ul>
         </div>
 
