@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-[x-cloak] {
-    display: none;
+/* The "Vintage Vault" Custom Button Style */
+@layer components {
+    .btn-vintage {
+        @apply px-4 py-2 bg-vintage-900 text-vintage-50 font-serif rounded shadow-md hover:bg-vintage-500 transition duration-300 ease-in-out;
+    }
+    
+    .card-vintage {
+        @apply bg-white border border-vintage-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300;
+    }
 }

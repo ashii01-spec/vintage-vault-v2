@@ -1,22 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ----------------------------------------- Public Routes -----------------------------------------
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+// Landing Page ( Home Page )
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+
 
 // ------------------------------------ Authenticated Routes -----------------------------------
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -51,12 +47,7 @@ Route::middleware([
     });
 });
 
-// ----------------------------------------- Public Routes -----------------------------------------
 
-// Landing Page ( Home Page )
-Route::get('/', function () {
-    return view('welcome'); // We will change this to our Vintage Vault Home later
-});
 
 
 
