@@ -64,19 +64,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-    // A user can be a seller who lists many products
-    public function products() {
-        return $this->hasMany(Product::class);
-    }
-
-    // A user has many orders
-    public function orders() {
-        return $this->hasMany(Order::class);
-    }
-
-    // A user has one cart
-    public function cart() {
-        return $this->hasOne(Cart::class);
-    }
 }
