@@ -12,7 +12,7 @@
             </div>
             <div class="flex items-center space-x-4">
                 @auth
-                    <a href="#" class="text-sm">Cart</a>
+                    <a href="{{ route('cart') }}" class="hover:text-vintage-100 font-bold">CART</a>
                     <a href="{{ url('/dashboard') }}" class="text-sm">Dashboard</a>
                 @else
                     <a href="{{ route('login') }}" class="text-sm">Log in</a>
