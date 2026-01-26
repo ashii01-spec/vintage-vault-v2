@@ -1,3 +1,4 @@
+@include('layouts.navbar')
 <x-guest-layout>
     <div class="bg-vintage-900 text-vintage-50 py-24 px-4 text-center relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" 
@@ -39,13 +40,5 @@
         </div>
     </div>
     
-    <div class="bg-vintage-100 py-16">
-        <div class="container mx-auto px-4 text-center">
-             <h3 class="text-2xl font-serif font-bold text-vintage-900 mb-4">Why Collect With Us?</h3>
-             <p class="max-w-2xl mx-auto text-gray-700 font-serif leading-relaxed">
-                 We curate only the finest books, electronics, and artworks from decades past. 
-                 Every item in the Vault has a story to tell.
-             </p>
-        </div>
-    </div>
+    @include('layouts.footer')
 </x-guest-layout>
