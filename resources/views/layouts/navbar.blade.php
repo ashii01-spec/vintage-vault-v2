@@ -1,5 +1,8 @@
-<nav class="bg-vintage-950 text-white p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center ">
+<nav class="bg-vintage-900 text-white shadow-md relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" 
+             style="background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');">
+        </div>
+        <div class="container mx-auto flex justify-between items-center relative z-10 p-4">
             <div class="text-2xl font-serif font-bold tracking-wider">
                 <img src="./images/logo.png" alt="logo" class="w-12 h-12 inline-block mr-2">
                 <a href="/">VINTAGE VAULT</a>
