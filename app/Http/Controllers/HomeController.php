@@ -20,4 +20,9 @@ class HomeController extends Controller
         $products = Product::with('category')->latest()->get();
         return view('gallery', compact('products'));
     }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }

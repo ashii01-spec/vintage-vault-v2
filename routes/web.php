@@ -15,6 +15,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Gallery Page
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 
+// Contact Page
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
 
 
 

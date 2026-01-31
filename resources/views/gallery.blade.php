@@ -1,7 +1,7 @@
 @include('layouts.navbar')
 <x-guest-layout>
-    <div class="bg-vintage-100 py-12">
-        <div class="container mx-auto px-4">
+    <div class="bg-vintage-100 py-16 tracking-tight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-5xl font-serif font-bold text-vintage-900 uppercase tracking-widest">Artifact Gallery</h1>
                 <p class="text-vintage-800 font-serif italic mt-4 italic opacity-75">"A curated visual journey through the history of the Vault."</p>

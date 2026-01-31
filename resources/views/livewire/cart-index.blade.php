@@ -1,4 +1,4 @@
-<div class="container mx-auto py-12 px-4">
+<div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
     <h1 class="text-3xl font-serif font-bold text-vintage-900 mb-8 border-b border-vintage-500 pb-2">Your Collection</h1>
 
     @if (session()->has('message'))

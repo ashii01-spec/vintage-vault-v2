@@ -11,7 +11,7 @@
                 <a href="/" class="hover:text-vintage-100">HOME</a>
                 <a href="{{ route('shop') }}" class="hover:text-vintage-100">SHOP</a>
                 <a href="{{ route('gallery') }}" class="hover:text-vintage-100">GALLERY</a>
-                <a href="#" class="hover:text-vintage-100">CONTACT US</a>
+                <a href="{{ route('contact') }}" class="hover:text-vintage-100">CONTACT US</a>
             </div>
             <div class="flex items-center space-x-4">
                 @auth

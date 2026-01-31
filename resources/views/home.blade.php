@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <div class="container mx-auto py-16 px-4">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-serif font-bold text-vintage-900 uppercase tracking-widest">Featured Artifacts</h2>
             <div class="w-24 h-1 bg-vintage-500 mx-auto mt-4"></div>
