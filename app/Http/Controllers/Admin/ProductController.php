@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -13,14 +14,15 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('category')->paginate(10);
+        $products = Product::with(['category', 'seller'])->paginate(10);
         return view('admin.products.index', compact('products'));
     }
 
     public function create()
     {
         $categories = Category::all();
-        return view('admin.products.create', compact('categories'));
+        $sellers = User::all();
+        return view('admin.products.create', compact('categories', 'sellers'));
     }
 
     public function store(Request $request)
@@ -29,11 +31,12 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric',
             'category_id' => 'required',
+            'user_id' => 'required|exists:users,id',
             'image' => 'image|nullable'
         ]);
 
         $data = $request->all();
-        $data['user_id'] = Auth::id(); // Admin is the uploader
+        // $data['user_id'] = Auth::id(); // Removed: Admin selects the seller
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('products', 'public');
@@ -47,7 +50,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::all();
-        return view('admin.products.edit', compact('product', 'categories'));
+        $sellers = User::all();
+        return view('admin.products.edit', compact('product', 'categories', 'sellers'));
     }
 
     public function update(Request $request, Product $product)
@@ -56,6 +60,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric',
             'category_id' => 'required',
+            'user_id' => 'required|exists:users,id',
             'image' => 'image|nullable'
         ]);
     

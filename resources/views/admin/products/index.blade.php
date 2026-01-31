@@ -24,6 +24,7 @@
                             <th class="px-6 py-3">Name</th>
                             <th class="px-6 py-3">Category</th>
                             <th class="px-6 py-3">Price</th>
+                            <th class="px-6 py-3">Seller</th>
                             <th class="px-6 py-3">Actions</th>
                         </tr>
                     </thead>
@@ -40,6 +41,7 @@
                             <td class="px-6 py-4 font-bold text-vintage-900">{{ $product->name }}</td>
                             <td class="px-6 py-4 text-gray-600">{{ $product->category->name }}</td>
                             <td class="px-6 py-4 font-bold text-vintage-800">${{ $product->price }}</td>
+                            <td class="px-6 py-4 text-gray-600">{{ $product->seller->name }}</td>
                             <td class="px-6 py-4 flex gap-3">
                                 <a href="{{ route('admin.products.edit', $product->id) }}" class="text-indigo-600 hover:text-indigo-900 font-bold text-sm">Edit</a>
                                 <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this artifact?');">

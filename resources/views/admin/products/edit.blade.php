@@ -25,6 +25,17 @@
                         </select>
                     </div>
 
+                    <div class="mb-4">
+                        <label class="block text-vintage-900 font-bold mb-2 font-serif">Seller</label>
+                        <select name="user_id" class="w-full border-gray-300 rounded px-3 py-2">
+                            @foreach($sellers as $seller)
+                                <option value="{{ $seller->id }}" {{ $product->user_id == $seller->id ? 'selected' : '' }}>
+                                    {{ $seller->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="grid grid-cols-2 gap-4 mb-4">
                         <div>
                             <label class="block text-vintage-900 font-bold mb-2 font-serif">Price ($)</label>
