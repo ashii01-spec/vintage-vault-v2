@@ -18,6 +18,16 @@
                         <input type="email" name="email" value="{{ $user->email }}" class="w-full border-gray-300 rounded px-3 py-2" required>
                     </div>
 
+                    <div class="mb-4">
+                        <label class="block font-serif font-bold mb-2 text-vintage-900">Phone</label>
+                        <input type="text" name="phone" value="{{ $user->phone }}" class="w-full border-gray-300 rounded px-3 py-2">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block font-serif font-bold mb-2 text-vintage-900">Address</label>
+                        <input type="text" name="address" value="{{ $user->address }}" class="w-full border-gray-300 rounded px-3 py-2">
+                    </div>
+
                     <div class="mb-6">
                         <label class="block font-serif font-bold mb-2 text-vintage-900">Role</label>
                         <select name="role" class="w-full border-gray-300 rounded px-3 py-2">

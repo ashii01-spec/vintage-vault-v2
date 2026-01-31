@@ -27,6 +27,8 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
             'role' => 'required|in:admin,seller,user',
+            'phone' => 'nullable|string',
+            'address' => 'nullable|string',
         ]);
 
         User::create([
@@ -34,6 +36,8 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
+            'phone' => $request->phone,
+            'address' => $request->address,
         ]);
 
         return redirect()->route('admin.users.index')->with('success', 'User registered successfully.');
@@ -50,9 +54,11 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,'.$user->id,
             'role' => 'required|in:admin,seller,user',
+            'phone' => 'nullable|string',
+            'address' => 'nullable|string',
         ]);
 
-        $user->update($request->only(['name', 'email', 'role']));
+        $user->update($request->only(['name', 'email', 'role', 'phone', 'address']));
 
         return redirect()->route('admin.users.index')->with('success', 'User details updated.');
     }

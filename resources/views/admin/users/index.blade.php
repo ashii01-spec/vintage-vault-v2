@@ -22,6 +22,8 @@
                         <tr>
                             <th class="px-6 py-3">Name</th>
                             <th class="px-6 py-3">Email</th>
+                            <th class="px-6 py-3">Phone</th>
+                            <th class="px-6 py-3">Address</th>
                             <th class="px-6 py-3">Role</th>
                             <th class="px-6 py-3">Actions</th>
                         </tr>
@@ -31,6 +33,8 @@
                         <tr class="hover:bg-vintage-100 transition-colors">
                             <td class="px-6 py-4 font-bold">{{ $user->name }}</td>
                             <td class="px-6 py-4">{{ $user->email }}</td>
+                            <td class="px-6 py-4">{{ $user->phone }}</td>
+                            <td class="px-6 py-4">{{ $user->address }}</td>
                             <td class="px-6 py-4">
                                 @if($user->role === 'admin')
                                     <span class="bg-red-100 text-red-800 py-1 px-3 rounded-full text-xs font-bold uppercase">Admin</span>
