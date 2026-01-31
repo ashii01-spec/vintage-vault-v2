@@ -39,6 +39,16 @@
                     <p class="text-gray-600 text-sm mb-4">View and manage registered users, sellers, and admins.</p>
                     <a href="{{ route('admin.users.index') }}" class="text-vintage-700 font-bold hover:underline">Go to Users &rarr;</a>
                 </div>
+
+                <!-- Manage Orders -->
+                <div class="bg-white border border-vintage-200 overflow-hidden shadow-xl sm:rounded-lg p-6 hover:shadow-2xl transition-shadow cursor-pointer" onclick="window.location='{{ route('admin.orders.index') }}'">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold font-serif text-vintage-800">Manage Orders</h3>
+                        <svg class="w-8 h-8 text-vintage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Track customer orders and update fulfillment status.</p>
+                    <a href="{{ route('admin.orders.index') }}" class="text-vintage-700 font-bold hover:underline">Go to Orders &rarr;</a>
+                </div>
             </div>
             
             <div class="mt-8 bg-vintage-50 border border-vintage-200 p-6 rounded-lg">
