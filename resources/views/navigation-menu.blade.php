@@ -19,17 +19,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    @if(Auth::user()->role === 'admin')
-                        <x-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')" class="text-vintage-100 hover:text-white font-serif">
-                            {{ __('Users') }}
-                        </x-nav-link>
-                        <x-nav-link href="{{ route('admin.categories.index') }}" :active="request()->routeIs('admin.categories.*')" class="text-vintage-100 hover:text-white font-serif">
-                            {{ __('Categories') }}
-                        </x-nav-link>
-                        <x-nav-link href="{{ route('admin.products.index') }}" :active="request()->routeIs('admin.products.*')" class="text-vintage-100 hover:text-white font-serif">
-                            {{ __('Artifacts') }}
-                        </x-nav-link>
-                    @endif
+                    {{-- Admin Links Removed (Now in Dashboard) --}}
                 </div>
             </div>
 
@@ -158,17 +148,7 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
 
-             @if(Auth::user()->role === 'admin')
-                <x-responsive-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')" class="text-vintage-100 hover:text-white hover:bg-vintage-700 font-serif">
-                    {{ __('Users') }}
-                </x-responsive-nav-link>
-                <x-responsive-nav-link href="{{ route('admin.categories.index') }}" :active="request()->routeIs('admin.categories.*')" class="text-vintage-100 hover:text-white hover:bg-vintage-700 font-serif">
-                    {{ __('Categories') }}
-                </x-responsive-nav-link>
-                <x-responsive-nav-link href="{{ route('admin.products.index') }}" :active="request()->routeIs('admin.products.*')" class="text-vintage-100 hover:text-white hover:bg-vintage-700 font-serif">
-                    {{ __('Artifacts') }}
-                </x-responsive-nav-link>
-            @endif
+             {{-- Admin Links Removed --}}
         </div>
 
         <!-- Responsive Settings Options -->

@@ -60,6 +60,23 @@ class CartIndex extends Component
         }
     }
 
+    public function checkout()
+    {
+        if (Auth::check()) {
+            $cart = Cart::where('user_id', Auth::id())->first();
+            if ($cart) {
+                // Dispatch browser event with the total amount BEFORE clearing
+                $this->dispatch('checkout-complete', total: $this->total);
+
+                // Clear the cart items
+                $cart->items()->delete();
+                
+                // Refresh the component state
+                $this->loadCart();
+            }
+        }
+    }
+
     public function render()
     {
         return view('livewire.cart-index')->layout('layouts.frontend');

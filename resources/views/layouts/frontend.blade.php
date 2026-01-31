@@ -18,5 +18,6 @@
     @include('layouts.footer')
 
     @livewireScripts
+    @stack('scripts')
 </body>
 </html>

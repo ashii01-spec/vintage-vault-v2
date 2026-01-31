@@ -37,7 +37,7 @@
                                 </div>
                             </td>
                             <td class="py-4 px-6 font-bold text-vintage-900">
-                                ${{ number_format($item->product->price * $item->quantity, 2) }}
+                                <span class="text-vintage-800">${{ number_format($item->product->price * $item->quantity, 2) }}</span>
                             </td>
                             <td class="py-4 px-6 text-center">
                                 <button wire:click="removeItem({{ $item->id }})" class="text-red-500 hover:text-red-700 hover:underline text-sm font-bold">
@@ -54,7 +54,7 @@
                 <span class="text-2xl font-bold font-serif text-vintage-900">${{ number_format($total, 2) }}</span>
             </div>
             <div class="p-6 bg-vintage-50 flex justify-end">
-                <button class="btn-vintage text-lg">Proceed to Checkout</button>
+                <button wire:click="checkout" wire:loading.attr="disabled" class="btn-vintage text-lg">Proceed to Checkout</button>
             </div>
         </div>
     @else
@@ -64,3 +64,13 @@
         </div>
     @endif
 </div>
+
+@push('scripts')
+<script>
+    document.addEventListener('livewire:initialized', () => {
+        Livewire.on('checkout-complete', (event) => {
+            alert('Checkout Successful! Total Amount: $' + parseFloat(event.total).toFixed(2));
+        });
+    });
+</script>
+@endpush
