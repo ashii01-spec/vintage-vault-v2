@@ -36,10 +36,8 @@ Route::middleware([
         Route::resource('users', UserController::class);
     });
     
-    // General Dashboard for everyone
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // General Dashboard (Role-based redirection)
+    Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
     // Cart Page
     Route::get('/cart', \App\Livewire\CartIndex::class)->name('cart');
