@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use App\Models\Cart;
 use App\Models\CartItem;
+use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -63,16 +65,35 @@ class CartIndex extends Component
     public function checkout()
     {
         if (Auth::check()) {
-            $cart = Cart::where('user_id', Auth::id())->first();
-            if ($cart) {
-                // Dispatch browser event with the total amount BEFORE clearing
+            $cart = Cart::where('user_id', Auth::id())->with('items.product')->first();
+            if ($cart && $cart->items->count() > 0) {
+                // 1. Create the Order
+                $order = Order::create([
+                    'user_id' => Auth::id(),
+                    'total_price' => $this->total,
+                    'status' => 'pending',
+                ]);
+
+                // 2. Create Order Items
+                foreach ($cart->items as $cartItem) {
+                    OrderItem::create([
+                        'order_id' => $order->id,
+                        'product_id' => $cartItem->product_id,
+                        'quantity' => $cartItem->quantity,
+                        'price' => $cartItem->product->price,
+                    ]);
+                }
+
+                // 3. Dispatch browser event with the total amount
                 $this->dispatch('checkout-complete', total: $this->total);
 
-                // Clear the cart items
+                // 4. Clear the cart items
                 $cart->items()->delete();
                 
-                // Refresh the component state
+                // 5. Refresh the component state
                 $this->loadCart();
+
+                session()->flash('message', 'Checkout successful! Your order has been placed.');
             }
         }
     }

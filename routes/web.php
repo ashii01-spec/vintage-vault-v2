@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\OrderController;
 
 // ----------------------------------------- Public Routes -----------------------------------------
 
@@ -34,6 +35,11 @@ Route::middleware([
         Route::resource('products', ProductController::class);
         Route::resource('categories', CategoryController::class);
         Route::resource('users', UserController::class);
+
+        // Order Management
+        Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+        Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+        Route::patch('/orders/{order}/status', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
     });
     
     // General Dashboard (Role-based redirection)
@@ -47,10 +53,12 @@ Route::middleware([
 
 
     // Seller routes
-    Route::middleware(['role:seller'])->prefix('seller')->group(function () {
-        Route::get('/products', function () {
-            return "Welcome Seller! Manage your items here.";
-        })->name('seller.products');
+    Route::middleware(['role:seller'])->prefix('seller')->name('seller.')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('seller.dashboard');
+        })->name('dashboard');
+        
+        Route::resource('products', \App\Http\Controllers\Seller\ProductController::class);
     });
 });
 

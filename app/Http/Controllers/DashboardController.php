@@ -16,7 +16,7 @@ class DashboardController extends Controller
         } elseif ($role === 'buyer') {
             return redirect()->route('shop');
         } elseif ($role === 'seller') {
-            return redirect()->route('seller.products');
+            return redirect()->route('seller.dashboard');
         }
 
         return view('dashboard');
