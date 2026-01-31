@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\OrderController;
 // Landing Page ( Home Page )
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Gallery Page
+Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
+
 
 
 
