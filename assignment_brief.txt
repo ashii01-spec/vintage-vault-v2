@@ -1,0 +1,601 @@
+COMP50016
+Server Side Programming - II
+Module Learning Outcomes (LO)
+
+On completion of this module, you will be able to:
+
+    1. Demonstrate a critical understanding of the functionality that is used in server-side web application
+       frameworks.
+    2. Design, implement, test and demonstrate a flexible, robust and secure server-side web application
+       solution.
+    3. Apply appropriate web application testing strategies and explain the importance of their use.
+    4. Demonstrate a critical understanding of the security issues that affect web applications and
+       implement an appropriate strategy to counter potential risks.
+
+ Deadline                           Weighting
+ Dates available on SAIS            80%
+
+
+University Regulations
+
+   • University Regulations regarding exceptional circumstances and academic misconduct will apply.
+   • Please ensure that you are familiar with these regulations.
+   • https://www.staffs.ac.uk/students/course-administration/academic-policies-and-regulations/home
+Submission rules
+
+    •  late submissions attract 0 marks for that section
+    •  failure to submit on Blackboard may forfeit your opportunity to present or demonstrate your work
+    •  failure to attend the presentation or demonstration on time may result in 0 marks for that
+       component of assessed work
+   • during the presentation/demonstration, if asked, you must be able to explain in detail your work,
+       otherwise this may result in 0 marks for that component of assessed work
+Any questions about the assessment should be directed to the module leader
+
+
+
+Assignment Specification
+Assessment Requirements:
+You need to submit the following via LMS:
+ • A zip file containing your code (the database, the PHP theme files(if used), the PHP files and
+     the database for PHP).
+ • You need to attend a 10-minute demonstration.
+ • The Github link to your project
+ • The Hosted Link
+
+
+
+
+                                                                                                Page |1
+Scenario
+
+This coursework will focus on continuing the development of your SaaS application from SSP1, now using the
+Laravel 12 Framework.
+
+Assume that your system is being migrated from its legacy PHP implementation into a modern Laravel-based
+application. You are required to identify which core requirements from SSP1 can be carried over, and which
+parts need to be refactored, extended, or newly created in Laravel.
+
+You must demonstrate an understanding of the core features of server-side applications, including:
+
+   •   Security and data protection
+
+   •   Encryption and secure storage of sensitive information
+
+   •   Token-based authentication and authorization (e.g., Sanctum or Passport)
+
+   •   Usage of APIs to expose data endpoints for integration or consumption
+
+You will then apply this knowledge to expand your own SaaS application. This should include both:
+
+   1. A Laravel implementation of the SSP1 system’s core features (CRUD, authentication, landing page).
+
+   2. Additional Laravel-based functionality such as API routes, middleware, role management, or
+      integrations that demonstrate scalability.
+
+
+
+Task
+You are required to build a web application using Laravel 12, SQL, and Tailwind that meet the
+requirements stated in the table below.
+
+
+Marking Criteria
+
+ Criteria                                                               Marks
+ Is built using Laravel 12                                              10
+ Has a SQL database connection                                          10
+ Meets specific criteria given by the business scenario:                40
+ • Use of external libraries (Livewire/Volt) for certain functional requirements (10)
+ • Use of Laravel’s Eloquent Model (10)
+ • Use of Laravel’s authentication package (Laravel Jetstream) to protect and authenticate routes
+     (10)
+ • Use of Laravel Sanctum to authenticate the API (10)
+
+
+
+
+ Security Documentation and Implementation                              15
+ API Extension / Integration                                            10
+ Use of a hosting service provider to host the application (Optional)   15
+ TOTAL                                                                  100
+
+
+
+
+                                                                                                Page |2
+Page |3
+          Mark allocations (Out of 10 marks)
+                      0–3                  4                   5                          6                               7-10
+                Unsatisfactory       satisfactory       good attempt            very good attempt                 Excellent Attempt
+Built using   0: No Use of        Laravel            Implementation:        Laravel Implementation:       7-8: Excellent Laravel
+Laravel 12    Laravel: The        Implementation     The project            The project goes beyond       Implementation: The project
+              project does not    : The project      showcases a good       basic requirements,           excels in Laravel development,
+              utilize the         demonstrates a     understanding of       demonstrating a high          showcasing mastery of the
+              Laravel             satisfactory       Laravel concepts       level of proficiency in       framework's capabilities.
+              framework at all.   level of Laravel   and best               Laravel development.          Advanced Laravel features are
+              Another             implementation     practices. Laravel     Advanced Laravel              implemented seamlessly,
+              framework or        . Essential        features are           features, such as             demonstrating creativity and
+              technology stack    Laravel features   utilized effectively   middleware,                   innovation in solution design.
+              is used instead.    are utilized,      to build a robust      relationships,                The project follows Laravel
+              1-2: Limited Use    including          and scalable           authentication, and           conventions meticulously, with
+              of Laravel:         routing,           application. The       Eloquent ORM, are             exceptional code organization,
+              There's some        controllers,       project follows        implemented effectively.      optimization, and scalability.
+              attempt to use      models,            Laravel                The project follows           9-10: Outstanding Laravel
+              Laravel, but it's   migrations, and    conventions            Laravel conventions           Implementation: The project
+              minimal or          views. The         closely, with well-    rigorously, with clear code   sets a benchmark for Laravel
+              incomplete. The     project follows    organized code         structure and                 development, demonstrating
+              project may lack    Laravel            structure and          optimization.                 exceptional proficiency and
+              fundamental         conventions        optimization.                                        innovation. It leverages Laravel's
+              Laravel features,   and best                                                                full potential to deliver a high-
+              such as routing,    practices to                                                            performance, scalable, and
+              controllers,        some extent,                                                            maintainable application.
+              models, or          but there's                                                             Advanced features, such as
+              migrations.         room for                                                                queues, caching, and event
+              3: Basic Laravel    improvement in                                                          listeners, are implemented with
+              Implementation:     optimization                                                            excellence. The project serves as
+              Laravel is used,    and structure.                                                          a testament to the developer's
+              but there are                                                                               expertise in Laravel
+              significant                                                                                 development.
+              deficiencies in
+              implementation.
+              Basic features
+              such as routing
+              and database
+              management
+              may be present,
+              but they lack
+              optimization,
+              structure, or
+              adherence to
+              Laravel best
+              practices.
+
+Has a SQL     0: No SQL           Adequate SQL       Good SQL               Very Good SQL Database        7-8: Excellent SQL Database
+database      Database            Database           Database               Connection: The project       Connection: The project excels
+connection    Connection: The     Connection:        Connection: The        goes beyond basic             in SQL database connection
+              project lacks any   The project        project showcases      requirements,                 implementation, showcasing
+              implementation      demonstrates a     a good                 demonstrating proficiency     mastery of database
+              of a SQL            satisfactory       understanding of       in SQL database               management principles. The
+              database            level of SQL       SQL database           connection management.        connection is established using
+              connection.         database           connection             Advanced features such        industry best practices for
+              There's no          connection         principles and         as connection pooling or      security, scalability, and
+              integration with    implementation     best practices.        query optimization are        performance. Advanced features
+              a SQL database      . The              The connection is      implemented to enhance        such as stored procedures,
+              system.             connection is      established            performance and               triggers, or transactions are
+              1-2: Incomplete     established        securely and           scalability. CRUD             implemented effectively to
+              SQL Database        securely, with     efficiently, with      operations are                ensure data integrity and
+              Connection:         appropriate        optimized settings     implemented with              reliability.
+              There's some        settings for       for performance        efficiency and robustness.    9-10: Outstanding SQL Database
+              attempt to          authentication     and security.                                        Connection: The project sets a
+              establish a SQL     and encryption.    CRUD operations                                      benchmark for SQL database
+              database            Basic CRUD         are implemented                                      connection implementation,
+
+                                                                                                                                Page |4
+                      0–3                   4                   5                      6                                7-10
+                Unsatisfactory        satisfactory        good attempt         very good attempt                 Excellent Attempt
+              connection, but      operations can      effectively, with                                 demonstrating exceptional
+              it's incomplete      be performed        error handling                                    proficiency and innovation. The
+              or poorly            reliably.           and data                                          connection architecture is
+              implemented.                             validation.                                       designed with scalability, fault
+              Connection                                                                                 tolerance, and high availability in
+              settings may be                                                                            mind. Advanced SQL features
+              incorrect or                                                                               and optimizations are utilized to
+              missing, leading                                                                           maximize database performance
+              to errors or                                                                               and efficiency. The project
+              inconsistencies.                                                                           serves as a testament to the
+              3: Basic SQL                                                                               developer's expertise in SQL
+              Database                                                                                   database management
+              Connection: A
+              basic SQL
+              database
+              connection is
+              established, but
+              there are
+              significant
+              deficiencies in
+              implementation.
+              Connection
+              settings may lack
+              security
+              measures, such
+              as encryption or
+              parameterized
+              queries.
+
+Use of        0: No Use of         Adequate Use        The project          The project goes beyond      7-8: Excellent Use of External
+external      External             of External         showcases a good     basic requirements,          Libraries: The project excels in
+libraries     Libraries: The       Libraries: The      understanding of     demonstrating proficiency    leveraging external libraries such
+(Livewire/V   project lacks any    project             leveraging           in leveraging external       as Livewire or Volt for fulfilling
+olt) for      implementation       demonstrates a      external libraries   libraries such as Livewire   functional requirements,
+certain       of external          satisfactory        such as Livewire     or Volt effectively. The     showcasing mastery of library
+functional    libraries such as    level of use of     or Volt for          chosen libraries are         integration and customization.
+requiremen    Livewire or Volt     external            fulfilling           utilized innovatively to     The chosen libraries are utilized
+ts            for fulfilling       libraries such as   functional           address complex              strategically to achieve project
+              functional           Livewire or Volt    requirements. The    functional requirements,     objectives, with a focus on
+              requirements.        for fulfilling      chosen libraries     resulting in a seamless      scalability, performance, and
+              The use of third-    functional          are integrated       user experience. The         user satisfaction. The
+              party libraries is   requirements.       seamlessly,          implementation reflects      implementation sets a high
+              absent.              The chosen          providing            careful optimization and     standard for innovation and
+              1-2: Limited Use     libraries are       enhanced             customization to align       excellence.
+              of External          effectively         functionality and    with project goals.          9-10: Outstanding Use of
+              Libraries: There's   integrated into     user interaction.                                 External Libraries: The project
+              some attempt to      the project,        The                                               sets a benchmark for the use of
+              use external         providing value-    implementation is                                 external libraries, demonstrating
+              libraries for        added features      well-optimized                                    exceptional proficiency and
+              fulfilling           and enhancing       and customized to                                 innovation. The chosen libraries
+              functional           user                meet specific                                     such as Livewire or Volt are
+              requirements,        experience.         project needs.                                    seamlessly integrated and
+              but it's minimal     However, there                                                        customized to deliver
+              or ineffective.      may be room                                                           transformative solutions for
+              The chosen           for                                                                   complex functional
+              libraries may not    improvement in                                                        requirements. The
+              be suitable for      optimization or                                                       implementation reflects a deep
+              the                  customization.                                                        understanding of library
+              requirements, or                                                                           capabilities and project
+              their                                                                                      requirements, resulting in a
+              implementation                                                                             highly optimized and user-
+              may be                                                                                     centric application.
+              incomplete or
+
+
+
+                                                                                                                                Page |5
+                   0–3                  4                   5                         6                              7-10
+              Unsatisfactory      satisfactory        good attempt            very good attempt               Excellent Attempt
+            poorly
+            integrated.
+            3: Basic Use of
+            External
+            Libraries: Basic
+            use of external
+            libraries such as
+            Livewire or Volt
+            is demonstrated
+            for fulfilling
+            certain
+            functional
+            requirements.
+            However, the
+            implementation
+            may lack
+            optimization,
+            customization, or
+            adherence to
+            best practices
+
+Use of      0: No Use of        The project         The project            The project goes beyond     7-8: Excellent Use of Eloquent
+Laravel’s   Eloquent Model:     demonstrates a      showcases a good       basic requirements,         Model: The project excels in
+Eloquent    The project lacks   satisfactory        understanding of       demonstrating proficiency   leveraging Laravel's Eloquent
+Model       any                 level of use of     leveraging             in leveraging Laravel's     Model for database interactions,
+            implementation      Laravel's           Laravel's Eloquent     Eloquent Model              showcasing mastery of ORM
+            of Laravel's        Eloquent Model      Model for              effectively. Advanced       principles and best practices.
+            Eloquent Model      for database        database               Eloquent features such as   Eloquent functionalities are
+            for database        interactions.       interactions.          query scopes, accessors,    utilized strategically to achieve
+            interactions.       CRUD                Eloquent's ORM         and mutators are utilized   project objectives, with a focus
+            Direct SQL          operations are      functionalities are    to enhance database         on performance, scalability, and
+            queries or          performed           utilized effectively   interactions and data       maintainability. The
+            alternative         effectively using   to perform CRUD        manipulation. The           implementation sets a high
+            methods are         Eloquent's ORM      operations and         implementation reflects     standard for efficiency and
+            used instead.       functionalities.    manage                 careful optimization and    effectiveness.
+            1-2: Limited Use    Relationships       relationships          customization to align      9-10: Outstanding Use of
+            of Eloquent         between             between models.        with project goals.         Eloquent Model: The project
+            Model: There's      models are          The                                                sets a benchmark for the use of
+            some attempt to     established         implementation is                                  Laravel's Eloquent Model,
+            use Laravel's       correctly, but      well-optimized                                     demonstrating exceptional
+            Eloquent Model,     there may be        and customized to                                  proficiency and innovation. The
+            but it's minimal    room for            meet specific                                      Eloquent Model is seamlessly
+            or ineffective.     improvement in      project needs.                                     integrated and customized to
+            The                 optimization or                                                        deliver transformative solutions
+            implementation      customization.                                                         for database interactions.
+            may be                                                                                     Advanced Eloquent features are
+            incomplete,                                                                                leveraged to optimize
+            inconsistent, or                                                                           performance, simplify complex
+            poorly integrated                                                                          queries, and ensure data
+            with the project.                                                                          consistency. The implementation
+            3: Basic Use of                                                                            reflects a deep understanding of
+            Eloquent Model:                                                                            ORM principles and project
+            Basic use of                                                                               requirements, resulting in a
+            Laravel's                                                                                  highly efficient and scalable
+            Eloquent Model                                                                             application.
+            is demonstrated
+            for database
+            interactions.
+            However, the
+            implementation
+            may lack
+            optimization,
+            scalability, or
+
+
+
+                                                                                                                            Page |6
+                     0–3                   4                 5                         6                               7-10
+                Unsatisfactory       satisfactory      good attempt            very good attempt                Excellent Attempt
+               adherence to
+               best practices.
+
+Use of         0: No Use of        The project       The project            The project goes beyond
+Laravel’s      Laravel's           demonstrates a    showcases a good       basic requirements,          7-8: Excellent Use of
+authenticati   Authentication      satisfactory      understanding of       demonstrating proficiency    Authentication Package: The
+on package     Package: The        level of use of   leveraging             in leveraging Laravel's      project excels in leveraging
+(Laravel       project lacks any   Laravel's         Laravel's              authentication package,      Laravel's authentication
+Jetstream)     implementation      authentication    authentication         such as Laravel Jetstream.   package, such as Laravel
+to protect     of Laravel's        package, such     package, such as       Advanced authentication      Jetstream, for route protection
+and            authentication      as Laravel        Laravel Jetstream,     features such as two-        and authentication, showcasing
+authenticat    package, such as    Jetstream, for    for route              factor authentication        mastery of authentication
+e routes       Laravel             route             protection and         (2FA) or OAuth               principles and best practices.
+               Jetstream, for      protection and    authentication.        integration may be           Authentication functionalities
+               route protection    authentication.   Authentication         implemented to enhance       are implemented strategically to
+               and                 Basic             functionalities are    security and user            achieve project objectives, with
+               authentication.     authentication    implemented            experience. The              a focus on security, scalability,
+               Custom              functionalities   seamlessly,            implementation reflects      and user satisfaction. The
+               authentication      are               providing a secure     careful customization and    implementation sets a high
+               methods or no       implemented       and user-friendly      optimization to align with   standard for efficiency,
+               authentication at   effectively,      experience for         project goals.               effectiveness, and usability.
+               all are used        providing user    registration, login,                                9-10: Outstanding Use of
+               instead.            registration,     and password                                        Authentication Package: The
+               1-2: Limited Use    login, and        management. The                                     project sets a benchmark for the
+               of                  password reset    implementation is                                   use of Laravel's authentication
+               Authentication      features.         well-integrated                                     package, demonstrating
+               Package: There's    However, there    with the project's                                  exceptional proficiency and
+               some attempt to     may be room       frontend and                                        innovation. The authentication
+               use Laravel's       for               follows best                                        package, such as Laravel
+               authentication      improvement in    practices for                                       Jetstream, is seamlessly
+               package, but it's   customization     security and                                        integrated and customized to
+               minimal or          or integration    usability.                                          deliver transformative solutions
+               ineffective. The    with the                                                              for route protection and
+               implementation      project's                                                             authentication. Advanced
+               may be              frontend.                                                             authentication features and
+               incomplete,                                                                               customization options are
+               inconsistent, or                                                                          leveraged to optimize security,
+               poorly integrated                                                                         simplify user management, and
+               with the project.                                                                         enhance user experience. The
+               Basic                                                                                     implementation reflects a deep
+               authentication                                                                            understanding of authentication
+               functionalities                                                                           principles and project
+               are                                                                                       requirements, resulting in a
+               implemented,                                                                              highly secure, scalable, and user-
+               but there are                                                                             centric application.
+               deficiencies in
+               security or user
+               experience.
+               3: Basic Use of
+               Authentication
+               Package: Basic
+               use of Laravel's
+               authentication
+               package, such as
+               Laravel
+               Jetstream, is
+               demonstrated
+               for route
+               protection and
+               authentication.
+               However, the
+               implementation
+               may lack
+               customization,
+
+
+                                                                                                                               Page |7
+                    0–3                    4                  5                       6                               7-10
+                Unsatisfactory       satisfactory       good attempt          very good attempt                Excellent Attempt
+              scalability, or
+              adherence to
+              best practices.
+
+Use of        0: No Use of         Adequate Use       Good Use of          Very Good Use of Laravel     7-8: Excellent Use of Laravel Sanctum: The
+Laravel       Laravel Sanctum:     of Laravel         Laravel Sanctum:     Sanctum: The project         project excels in leveraging Laravel Sanctum
+Sanctum to    The project lacks    Sanctum: The       The project          goes beyond basic            for API authentication, showcasing mastery of
+authenticat   any                  project            showcases a good     requirements,                API security principles and best practices. The
+e the API     implementation       demonstrates a     understanding of     demonstrating proficiency    implementation is highly secure, with
+              of Laravel           satisfactory       leveraging Laravel   in leveraging Laravel        advanced features such as token scopes,
+              Sanctum for API      level of use of    Sanctum for API      Sanctum for API              expiration, revocation, and multi-device
+              authentication.      Laravel            authentication.      authentication. Advanced     support. The integration is seamless,
+              No                   Sanctum for API    Token-based          features such as token       providing a robust and scalable solution for
+              authentication       authentication.    authentication is    scopes and personal          API authentication.
+              mechanism is in      Tokens are         implemented          access tokens are utilized   9-10: Outstanding Use of Laravel Sanctum:
+              place for the API.   generated and      seamlessly,          to enhance security and      The project sets a benchmark for the use of
+              1-2: Limited Use     validated          providing secure     flexibility. The             Laravel Sanctum, demonstrating exceptional
+              of Laravel           effectively,       access to API        implementation reflects      proficiency and innovation. Laravel Sanctum is
+              Sanctum: There's     providing a        endpoints. The       careful customization and    seamlessly integrated and customized to
+              some attempt to      basic level of     implementation       optimization to align with   deliver a secure and user-friendly API
+              use Laravel          security for API   includes essential   project goals and best       authentication solution. Advanced features
+              Sanctum for API      endpoints.         security             practices.                   and security measures are leveraged to
+              authentication,      However, there     measures, such as                                 ensure optimal performance and protection
+              but it's minimal     may be room        token expiration                                  against threats. The implementation reflects a
+              or ineffective.      for                and revocation,                                   deep understanding of API security and
+              The                  improvement in     and is well-                                      project requirements, resulting in a highly
+              implementation       customization,     integrated with                                   secure, scalable, and maintainable
+              may be               security, or       the project's                                     application.
+              incomplete,          integration with   overall
+              insecure, or         the project's      architecture.
+              poorly integrated    overall
+              with the project.    architecture.
+              Basic token
+              generation or
+              validation might
+              be present but
+              lacks robustness.
+              3: Basic Use of
+              Laravel Sanctum:
+              Basic use of
+              Laravel Sanctum
+              is demonstrated
+              for API
+              authentication.
+              Tokens are
+              generated and
+              validated, but
+              the
+              implementation
+              may lack
+              customization,
+              security
+              measures, or
+              adherence to
+              best practices.
+
+                   0–5:                  6–7:             8–9: Good        10–11: Very good attempt               12–15: Excellent attempt
+               Unsatisfactory        Satisfactory          attempt
+Security                                              Secure               Strong security practices    Exemplary security implementation. Covers
+Documenta     No evidence of       Basic security     authentication,      (encryption, CSRF tokens,    multiple layers (validation, XSS/SQLi
+tion and      security             measures           input validation,    role-based access). Clear    prevention, HTTPS, secure APIs).
+Implement     practices.           implemented        and session          documentation of threats,    Documentation is thorough, well-structured,
+ation         Sensitive data       (hashed            handling in place.   mitigations, and testing.    and maps directly to the system.
+              (e.g., passwords)    passwords,         Basic encryption
+
+                                                                                                                              Page |8
+                     0–3                     4                  5                      6                              7-10
+                Unsatisfactory         satisfactory       good attempt         very good attempt               Excellent Attempt
+              stored in plain       form               and error
+              text. No              validation).       handling.
+              documentation         Limited            Documentation
+              on threats or         documentation      identifies some
+              mitigation.           on risks. Some     risks and
+                                    vulnerabilities    countermeasures.
+                                    remain.
+                     0–3                     4                   5                       6                                    7-10
+              Unsatisfactory        satisfactory       good attempt         very good attempt           Excellent Attempt
+API           0: No extension       Adequate            Good extension.     Very good extension. The    Outstanding extension. The project sets a
+Extension /   or integration.       extension. A       The project          API or integration goes     benchmark for API design and integration.
+Integration   No API                working API or     demonstrates a       beyond basics,              Endpoints are highly efficient, secure, and
+(Optional)    endpoints             integration with   solid                demonstrating proficiency   scalable. Advanced features are fully utilized
+              created, no           stable data        understanding of     in performance              (e.g., Sanctum for tokens, complex
+              third-party API       handling. CRUD     API                  optimization, validation,   aggregations in MongoDB, robust error
+              used, and no          operations or      development/inte     and security. Advanced      handling, caching, pagination, or external
+              attempt to            third-party        gration. Endpoints   techniques are applied      service integrations). The implementation
+              extend the            consumption is     are well-            (e.g., token-based auth,    follows best practices and is maintainable,
+              system beyond         functional.        structured, error    middleware, indexing in     professional, and innovative.
+              basic CRUD            Error handling     handling is          MongoDB, or thoughtful
+              1–2: Limited          exists but is      adequate, and        third-party API
+              extension. Some       basic. Limited     some advanced        workflows).
+              attempt at an         use of             features are
+              API or                advanced           included (e.g.,
+              integration, but      features (e.g.,    role-based access,
+              incomplete or         authentication,    aggregations,
+              ineffective (e.g.,    request            meaningful third-
+              broken                validation,        party data
+              endpoints,            indexing/aggreg    usage).adequate.
+              unstable third-       ation in
+              party calls, or       MongoDB)..
+              poorly
+              configured
+              NoSQL).
+              3: Basic
+              extension. A
+              simple REST API
+              or minimal
+              integration is
+              present (e.g., a
+              few working
+              endpoints, or a
+              basic MongoDB
+              CRUD). Lacks
+              optimization,
+              robust error
+              handling, or
+              clear connection
+              to the system’s
+              business
+              scenario.
+
+
+
+
+              0–5:                  6–7:               8–9: Good            10–11: Very good attempt    12–15: Excellent attempt
+              Unsatisfactory        Satisfactory       attempt
+Use of a      No use of             Basic              Application          Deployed on a proper        Hosting demonstrates proficiency with
+hosting       hosting service       deployment         successfully         cloud platform (e.g.,       advanced deployment practices.
+service       provider.             attempted (e.g.,   deployed and         Heroku, Railway,
+provider to                         shared hosting,    accessible with      DigitalOcean, AWS free      Application uses robust configurations such as
+host the      Application only      cPanel, or free-   proper               tier).                      autoscaling, load balancing, managed
+application   runs locally (e.g.,   tier cloud).       configuration.                                   databases, or CDNs.
+(Optional)    on
+
+                                                                                                                              Page |9
+          0–3                  4                    5                       6                             7-10
+     Unsatisfactory      satisfactory        good attempt           very good attempt              Excellent Attempt
+    XAMPP/Artisan     Application may      Hosting includes     Includes environment        CI/CD pipelines in place for automated
+    serve) without    be accessible        HTTPS (SSL/TLS)      configuration (.env),       deployment.
+    any attempt to    online, but with     and stable           secure database access,
+    deploy            reliability issues   uptime.              HTTPS enabled.              Strong focus on security (firewalls,
+    externally.       (e.g., no HTTPS,                                                      environment separation for dev/prod,
+                      frequent             Basic use of         Demonstrates                encrypted secrets).
+    No                downtime,            hosting features     optimization such as
+    documentation     misconfigured        like database        caching, automated          Application is highly reliable, scalable, and
+    provided on       environment          connections,         backups, or use of a CDN.   documented with clear deployment steps..
+    deployment        variables).          environment
+    steps.                                 configuration, or    Shows understanding of
+                                           error logs.          pushing code updates
+                                                                (e.g., via Git or CI/CD
+                                           Note: Many           pipeline).
+                                           hosting platforms
+                                           (e.g., Heroku,
+                                           Render, Railway)
+                                           provide free
+                                           HTTPS via Let’s
+                                           Encrypt. AWS EC2
+                                           does not provide
+                                           free SSL by
+                                           default; HTTPS
+                                           can be configured
+                                           via Let’s Encrypt
+                                           with a custom
+                                           domain or via
+                                           AWS Certificate
+                                           Manager when
+                                           used with services
+                                           like Elastic Load
+                                           Balancer or
+                                           CloudFront
+
+
+Submission and Assessment
+
+    •   Submission is via LMS. A zipped copy of your code (not a RAR file) should be submitted immediately
+        following your demonstration.
+
+    •   Submission will not be accepted by alternative means (such as email), so you should ensure your
+        submission is made well before the deadline to avoid last-minute problems.
+
+    •   There will be a scheduled demonstration slot for you to show your work. Failure to demonstrate the
+        system during your allocated time slot will automatically give you zero marks regardless of whether
+        the work has been submitted.
+
+    •   The database you choose to build the application on must be based on SQL. If SQLite is used, the DB
+        file must be attached; if MySQL is used, an SQL dump must be attached to the ZIP submission file.
+        If you do need to include a NoSQL database as well, screenshots of your node collections should be
+        included in the submission file under a folder labeled “NoSQL DB Nodes Collections.”
+
+
+
+Optional Marks
+
+The marking scheme details 2 components that are optional, the use of a API and the ability to host your
+application. These 2 can be completed at your own discretion, as these topics will not be covered during
+lecture hours. You can use the below resources to learn more about these 2 topics.
+
+Do note, the resources below require an active Linkdlin learning account to use.
+                                                                                                                 P a g e | 10
+https://www.linkedin.com/learning/aws-and-react-creating-full-stack-apps-23432036/full-stack-react-
+development-on-aws?u=180139196
+
+https://www.linkedin.com/learning/aws-essential-training-for-developers-17237791/what-is-the-best-way-
+to-use-aws?u=180139196
+
+https://www.linkedin.com/learning/learning-aws-amplify-22879744/build-apps-with-aws-using-amplify-
+cli?u=180139196
+
+https://www.linkedin.com/learning/amazon-ec2-essential-training/learning-amazon-ec2?u=180139196
+
+https://www.linkedin.com/learning/nosql-essential-training/get-to-know-nosql?u=180139196
+
+https://www.linkedin.com/learning/mongodb-essential-training/an-introduction-to-mongodb-
+23754278?u=180139196
+
+
+
+
+                                                                                            P a g e | 11
+
