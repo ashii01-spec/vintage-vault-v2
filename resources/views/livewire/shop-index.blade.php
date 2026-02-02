@@ -37,8 +37,12 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     @forelse($products as $product)
                         <div class="card-vintage group">
-                            <div class="h-64 bg-vintage-100 flex items-center justify-center border-b border-vintage-500">
-                                <span class="font-serif italic text-vintage-500 group-hover:scale-110 transition-transform">🏛️ Vintage Artifact</span>
+                            <div class="h-64 bg-vintage-100 flex items-center justify-center border-b border-vintage-500 overflow-hidden relative">
+                                @if($product->image)
+                                    <img src="{{ asset('storage/' . $product->image) }}" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" alt="{{ $product->name }}">
+                                @else
+                                    <span class="font-serif italic text-vintage-500 group-hover:scale-110 transition-transform">🏛️ Vintage Artifact</span>
+                                @endif
                             </div>
                             <div class="p-6">
                                 <span class="text-xs font-serif text-vintage-500 uppercase tracking-widest">{{ $product->category->name }}</span>
