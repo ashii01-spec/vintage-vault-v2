@@ -23,11 +23,13 @@
                     @foreach($cartItems as $item)
                         <tr class="border-b border-gray-200 hover:bg-gray-50">
                             <td class="py-4 px-6 flex items-center">
+                                <div class="w-16 h-16 min-w-[4rem] bg-gray-200 rounded mr-4 flex-shrink-0 flex items-center justify-center overflow-hidden border border-gray-200">
                                     @if($item->product->image)
-                                        <img src="{{ asset('storage/' . $item->product->image) }}" class="w-full h-full object-cover rounded" alt="{{ $item->product->name }}">
+                                        <img src="{{ asset('storage/' . $item->product->image) }}" class="w-full h-full object-cover" alt="{{ $item->product->name }}">
                                     @else
-                                        No Img
+                                        <span class="text-xs text-gray-400 italic">No Img</span>
                                     @endif
+                                </div>
                                 <span class="font-bold font-serif">{{ $item->product->name }}</span>
                             </td>
                             <td class="py-4 px-6">${{ number_format($item->product->price, 2) }}</td>
